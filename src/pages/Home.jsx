@@ -7,7 +7,7 @@ export const Home = () => {
 const [countries, setCountries] = useState([])
 
   useEffect(() => {
-  
+
     const data = getCountries()
       .then(data => {
         setCountries(data)
@@ -15,11 +15,10 @@ const [countries, setCountries] = useState([])
 })
 
   }, [])
-  
+
   return (
     <Section>
       <Container>
-        
         <CountryList countries={countries } />
       </Container>
     </Section>

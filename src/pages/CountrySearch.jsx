@@ -10,17 +10,19 @@ import {
 } from 'components';
 
 export const CountrySearch = () => {
-  const [region, setRegion] = useState("");
+  const [region, setRegion] = useState('');
+  const [countries, setCountries] = useState([]);
+
   useEffect(() => {
     if (!region) {
       return;
     }
     fetchByRegion(region).then(countries => {
-      setRegion(countries);
+      setCountries(countries);
     });
   }, [region]);
 
-  const getRegion = (newRegion) => {
+  const getRegion = newRegion => {
     setRegion(newRegion);
   };
 
@@ -28,7 +30,7 @@ export const CountrySearch = () => {
     <Section>
       <Container>
         <SearchForm getRegion={getRegion} />
-        <CountryList countries={region } />
+        <CountryList countries={countries} />
       </Container>
     </Section>
   );

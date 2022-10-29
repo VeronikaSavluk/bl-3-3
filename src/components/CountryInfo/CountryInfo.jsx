@@ -32,7 +32,8 @@ export const CountryInfo = ({
         </CountryTitle>
 
         <CountryDetail>
-          Population: <Accent>{population}</Accent>
+          Population:{' '}
+          <Accent>{new Intl.NumberFormat().format(population)}</Accent>
         </CountryDetail>
 
         <CountryDetail>
